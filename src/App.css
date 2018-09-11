@@ -1,0 +1,20 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mini-web-wrapper {
+  background: yellow;
+  width: 700px;
+}
+
+.mod-wrapper {
+  background: blue;
+  width: 300px;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
