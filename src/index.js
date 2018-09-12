@@ -6,10 +6,10 @@ import { createLogger } from 'redux-logger';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import {  changeAlignment } from './reducers';
+import {  navConfig } from './reducers';
 
 const logger = createLogger();
-const store = createStore(changeAlignment, applyMiddleware(logger));
+const store = createStore(navConfig, applyMiddleware(logger));
 
 ReactDOM.render(
     <Provider store={store}>

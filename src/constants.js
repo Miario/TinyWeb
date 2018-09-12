@@ -1,1 +1,2 @@
 export const CHANGE_ALIGNMENT = 'CHANGE_ALIGNMENT';
+export const ADD_LINK = 'ADD_LINK';

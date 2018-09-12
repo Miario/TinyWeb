@@ -3,13 +3,16 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
     return {
-      alignment: state.alignment
+      alignment: state.alignment,
+      link1: state.link1,
+      link2: state.link2,
+      link3: state.link3,
+      link4: state.link4
     };
   };
-
 class TinyNav extends Component {
     render() {
-        const { alignment } = this.props;
+        const { alignment, link1, link2, link3, link4 } = this.props;
 
         let align;
         if(alignment === 'right') {
@@ -19,10 +22,12 @@ class TinyNav extends Component {
         } else {
             align = 'align-center';
         }
-        console.log(align)
+        
+        let links = `${link1} ${link2} ${link3} ${link4}`
+
         return(
             <div className="">
-                <div className={align}>Nav</div>
+                <div className={align}>{links}</div>
             </div>
         )
     }
