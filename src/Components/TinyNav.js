@@ -1,15 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
-const mapStateToProps = state => {
-    return {
-      alignment: state.alignment,
-      link1: state.link1,
-      link2: state.link2,
-      link3: state.link3,
-      link4: state.link4
-    };
-  };
 class TinyNav extends Component {
     render() {
         const { alignment, link1, link2, link3, link4 } = this.props;
@@ -23,7 +13,7 @@ class TinyNav extends Component {
             align = 'align-center';
         }
         
-        let links = `${link1} ${link2} ${link3} ${link4}`
+        let links = `${link1} ${link2} ${link3} ${link4}`;
 
         return(
             <div className="">
@@ -33,4 +23,4 @@ class TinyNav extends Component {
     }
 }
 
-export default connect(mapStateToProps)(TinyNav);
+export default TinyNav;

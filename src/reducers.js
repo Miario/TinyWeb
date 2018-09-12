@@ -1,13 +1,14 @@
 import { CHANGE_ALIGNMENT, ADD_LINK } from "./constants";
 
-const initialState = {
+const navState = {
     alignment: 'right',
     link1: 'Home',
     link2: 'About',
     link3: 'Contact',
+    link4: '',
 }
 
-export const navConfig = (state=initialState, action={}) => {
+export const navConfig = (state=navState, action={}) => {
     switch(action.type) {
         case CHANGE_ALIGNMENT:
             return { 

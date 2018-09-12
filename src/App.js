@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-import TinyWeb from './Components/TinyWeb';
-import Mods from './Components/Mods';
+import TinyWeb from './Containers/TinyWeb';
+import ControlPanel from './Containers/ControlPanel';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="container flex-row">
-        <Mods />
+        <ControlPanel />
         <TinyWeb />
       </div>
     );

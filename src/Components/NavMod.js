@@ -1,23 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { navAlign, addLink }from '../actions';
-
-
-const mapStateToProps = state => {
-  return {
-    alignment: state.alignment,
-    link1: state.link1,
-    link2: state.link2,
-    link3: state.link3,
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onHandleAlign: (e) => dispatch(navAlign(e.target.value)),
-    onAddLink: (e) => dispatch(addLink(e.target.value, e.target.name))
-  }
-}
 
 class NavMod extends Component {
   constructor(props) {
@@ -35,22 +16,22 @@ class NavMod extends Component {
   }
 
   handleSubmit(event) {
-    alert(`Your inputs are:  Links:${this.state.addingLinks} Align:${this.props.alignment}`);
+    alert(`Your inputs are: Links:${this.state.addingLinks} Align:${this.props.alignment}`);
     event.preventDefault();
   }
 
   render() {
     const { addingLinks, changingAlignment } = this.state;
-    const { alignment, link1, link2, link3, onHandleAlign, onAddLink } = this.props;
+    const { alignment, link1, link2, link3, link4, onHandleAlign, onAddLink } = this.props;
 
     let links;
     if(addingLinks) {
       links = 
         <div>
-          <input id={1} placeholder="Link 1" type="text" name="link1" value={link1} onChange={onAddLink} />
+          <input placeholder="Link 1" type="text" name="link1" value={link1} onChange={onAddLink} />
           <input placeholder="Link 2" type="text" name="link2" value={link2} onChange={onAddLink} />
           <input placeholder="Link 3" type="text" name="link3" value={link3} onChange={onAddLink} />
-          <input placeholder="Link 4" type="text" name="link4" value={undefined} onChange={onAddLink} />
+          <input placeholder="Link 4" type="text" name="link4" value={link4} onChange={onAddLink} />
         </div>
     }
 
@@ -92,4 +73,4 @@ class NavMod extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavMod);
+export default NavMod;
