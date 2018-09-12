@@ -1,4 +1,4 @@
-import { CHANGE_ALIGNMENT, ADD_LINK, TOGGLE_LOGO } from './constants';
+import { CHANGE_ALIGNMENT, ADD_LINK, TOGGLE_LOGO, TOGGLE_HEADER_IMAGE } from './constants';
 
 export const navAlign = (text) => ({
     type: CHANGE_ALIGNMENT,
@@ -13,5 +13,10 @@ export const addLink = (text, name) => ({
 
 export const toggleLogo = (boolean) => ({
     type: TOGGLE_LOGO,
+    payload: boolean
+})
+
+export const toggleHeaderImage = (boolean) => ({
+    type: TOGGLE_HEADER_IMAGE,
     payload: boolean
 })

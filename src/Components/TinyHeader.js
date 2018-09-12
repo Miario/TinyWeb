@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-class TinyNav extends Component {
+class TinyHeader extends Component {
     render() {
-        const { alignment, link1, link2, link3, link4, includeLogo } = this.props;
+        const { alignment, link1, link2, link3, link4, includeLogo, includeHeaderImage } = this.props;
 
         let align;
         if(alignment === 'right') {
@@ -20,15 +20,19 @@ class TinyNav extends Component {
 
         let links = `${link1} ${link2} ${link3} ${link4}`;
 
-
+        let headerImage;
+        if(includeHeaderImage) {
+            headerImage = <img src="https://via.placeholder.com/700x200" alt="placeholder"></img>
+        }
 
         return(
             <div className="">
                 {logo}
                 <div className={align}>{links}</div>
+                {headerImage}
             </div>
         )
     }
 }
 
-export default TinyNav;
+export default TinyHeader;

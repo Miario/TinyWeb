@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class NavMod extends Component {
+class HeaderControls extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,19 @@ class NavMod extends Component {
 
   render() {
     const { addingLinks, changingAlignment } = this.state;
-    const { alignment, link1, link2, link3, link4, includeLogo, onHandleAlign, onAddLink, ontoggleLogo } = this.props;
+    const { 
+      alignment, 
+      link1, 
+      link2, 
+      link3, 
+      link4, 
+      includeLogo, 
+      includeHeaderImage, 
+      onHandleAlign, 
+      onAddLink, 
+      ontoggleLogo, 
+      ontoggleHeaderImage,
+    } = this.props;
 
     let links;
     if(addingLinks) {
@@ -43,7 +55,7 @@ class NavMod extends Component {
 
     return(
       <form>
-        <h3>Navigation:</h3>
+        <h3>Header:</h3>
         <label>
           Logo:
           <input type="checkbox" name="includeLogo" onChange={ontoggleLogo} checked={includeLogo}/>
@@ -60,9 +72,15 @@ class NavMod extends Component {
           <input type="checkbox" name="changingAlignment" onChange={this.toggleInput} checked={changingAlignment}/>
           {linkAlignment}
         </label>
+        <br />
+        <label>
+          Header Image:
+          <input type="checkbox" name="headerImage" onChange={ontoggleHeaderImage} checked={includeHeaderImage}/>
+        </label>
+        <br />
       </form>
     )
   }
 }
 
-export default NavMod;
+export default HeaderControls;

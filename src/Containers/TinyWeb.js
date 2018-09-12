@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import TinyNav from '../Components/TinyNav';
+import TinyHeader from '../Components/TinyHeader';
 
 const mapStateToProps = state => {
   return {
@@ -10,6 +10,7 @@ const mapStateToProps = state => {
     link3: state.link3,
     link4: state.link4,
     includeLogo: state.includeLogo,
+    includeHeaderImage: state.includeHeaderImage,
   }
 }
 
@@ -17,8 +18,7 @@ class TinyWeb extends Component {
   render() {
     return(
       <div className="mini-web-wrapper">
-        <TinyNav {...this.props}/>
-        <div>Header Image</div>
+        <TinyHeader {...this.props}/>
         <div>Main</div>
         <div>Footer</div>
       </div>
