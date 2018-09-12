@@ -1,4 +1,4 @@
-import { CHANGE_ALIGNMENT, ADD_LINK } from "./constants";
+import { CHANGE_ALIGNMENT, ADD_LINK, TOGGLE_LOGO } from "./constants";
 
 const navState = {
     alignment: 'right',
@@ -6,6 +6,7 @@ const navState = {
     link2: 'About',
     link3: 'Contact',
     link4: '',
+    includeLogo: false,
 }
 
 export const navConfig = (state=navState, action={}) => {
@@ -18,8 +19,13 @@ export const navConfig = (state=navState, action={}) => {
         case ADD_LINK:
             return { 
                 ...state,
-                [action.name]: action.payload,
+                [action.name]: action.payload
         }
+        case TOGGLE_LOGO:
+        return { 
+            ...state,
+            includeLogo: action.payload
+    }
         default:
             return state;
     }

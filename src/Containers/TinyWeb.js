@@ -9,6 +9,7 @@ const mapStateToProps = state => {
     link2: state.link2,
     link3: state.link3,
     link4: state.link4,
+    includeLogo: state.includeLogo,
   }
 }
 

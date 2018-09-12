@@ -8,21 +8,15 @@ class NavMod extends Component {
       changingAlignment: false,
     }
     this.toggleInput = this.toggleInput.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   toggleInput(e) {
     this.setState({[e.target.name]: !this.state[e.target.name]});
   }
 
-  handleSubmit(event) {
-    alert(`Your inputs are: Links:${this.state.addingLinks} Align:${this.props.alignment}`);
-    event.preventDefault();
-  }
-
   render() {
     const { addingLinks, changingAlignment } = this.state;
-    const { alignment, link1, link2, link3, link4, onHandleAlign, onAddLink } = this.props;
+    const { alignment, link1, link2, link3, link4, includeLogo, onHandleAlign, onAddLink, ontoggleLogo } = this.props;
 
     let links;
     if(addingLinks) {
@@ -48,11 +42,11 @@ class NavMod extends Component {
     }
 
     return(
-      <form onSubmit={this.handleSubmit}>
+      <form>
         <h3>Navigation:</h3>
         <label>
-          Logo
-          <input type="checkbox" />
+          Logo:
+          <input type="checkbox" name="includeLogo" onChange={ontoggleLogo} checked={includeLogo}/>
         </label>
         <br />
         <label>
@@ -66,8 +60,6 @@ class NavMod extends Component {
           <input type="checkbox" name="changingAlignment" onChange={this.toggleInput} checked={changingAlignment}/>
           {linkAlignment}
         </label>
-        <br />
-        <input type="submit" value="Submit" />
       </form>
     )
   }
