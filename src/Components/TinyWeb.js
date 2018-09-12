@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import TinyNav from './TinyNav';
 
-class MiniWeb extends Component {
+class TinyWeb extends Component {
   render() {
     return(
       <div className="mini-web-wrapper">
-        <div>Nav</div>
+        <TinyNav />
         <div>Header Image</div>
         <div>Main</div>
         <div>Footer</div>
@@ -13,4 +14,4 @@ class MiniWeb extends Component {
   }
 }
 
-export default MiniWeb;
+export default TinyWeb;

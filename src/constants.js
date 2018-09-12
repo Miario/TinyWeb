@@ -1,0 +1,1 @@
+export const CHANGE_ALIGNMENT = 'CHANGE_ALIGNMENT';
