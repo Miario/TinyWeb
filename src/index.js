@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { createLogger } from 'redux-logger';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import {  navConfig } from './reducers';
+import {  headerConfig, footerConfig } from './reducers';
 
 const logger = createLogger();
-const store = createStore(navConfig, applyMiddleware(logger));
+
+const rootReducer= combineReducers({ headerConfig, footerConfig });
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 ReactDOM.render(
     <Provider store={store}>

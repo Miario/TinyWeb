@@ -1,6 +1,6 @@
-import { CHANGE_ALIGNMENT, ADD_LINK, TOGGLE_LOGO, TOGGLE_HEADER_IMAGE } from "./constants";
+import { CHANGE_ALIGNMENT, ADD_LINK, TOGGLE_LOGO, TOGGLE_HEADER_IMAGE, TOGGLE_COPYRIGHT } from "./constants";
 
-const navState = {
+const headerState = {
     alignment: 'right',
     link1: 'Home',
     link2: 'About',
@@ -10,7 +10,7 @@ const navState = {
     includeHeaderImage: true,
 }
 
-export const navConfig = (state=navState, action={}) => {
+export const headerConfig = (state=headerState, action={}) => {
     switch(action.type) {
         case CHANGE_ALIGNMENT:
             return { 
@@ -37,14 +37,18 @@ export const navConfig = (state=navState, action={}) => {
     }
 }
 
-// export const addNavLink = (state=initialState, action={}) => {
-//     switch(action.type) {
-//         case CHANGE_ALIGNMENT:
-//             return { 
-//                 ...state,
-//                 alignment: action.payload
-//             }
-//         default:
-//             return state;
-//     }
-// }
+const footerState = {
+    addCopyright: false,
+}
+
+export const footerConfig = (state=footerState, action={}) => {
+    switch(action.type) {
+        case TOGGLE_COPYRIGHT:
+            return { 
+                ...state,
+                addCopyright: action.payload
+            }
+        default:
+            return state;
+    }
+}

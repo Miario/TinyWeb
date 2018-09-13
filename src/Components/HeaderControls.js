@@ -16,7 +16,7 @@ class HeaderControls extends Component {
 
   render() {
     const { addingLinks, changingAlignment } = this.state;
-    const { 
+    const {
       alignment, 
       link1, 
       link2, 
@@ -29,7 +29,7 @@ class HeaderControls extends Component {
       ontoggleLogo, 
       ontoggleHeaderImage,
     } = this.props;
-
+    
     let links;
     if(addingLinks) {
       links = 
@@ -44,7 +44,7 @@ class HeaderControls extends Component {
     let linkAlignment;
     if(changingAlignment) {
       linkAlignment =
-        <div>Choose Alignment
+        <div>Choose Alignment: 
           <select name="alignment" value={alignment} onChange={onHandleAlign}>
             <option value="left" >Left</option>
             <option value="center">Center</option>
@@ -70,9 +70,9 @@ class HeaderControls extends Component {
         <label>
           Align Links:
           <input type="checkbox" name="changingAlignment" onChange={this.toggleInput} checked={changingAlignment}/>
+          <br />
           {linkAlignment}
         </label>
-        <br />
         <label>
           Header Image:
           <input type="checkbox" name="headerImage" onChange={ontoggleHeaderImage} checked={includeHeaderImage}/>
