@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { navAlign, addLink, toggleLogo, toggleHeaderImage, toggleCopyright }from '../actions';
 import HeaderControls from '../Components/HeaderControls';
 import MainControls from '../Components/MainControls';
 import FooterControls from '../Components/FooterControls';
+import { 
+  navAlign, 
+  addLink, 
+  toggleLogo, 
+  toggleHeaderImage,
+  toggleCopyright,
+  addCopyright,
+  alignFooter,
+  addSocial
+} from '../actions';
 
 const mapStateToProps = state => {
   return {
@@ -18,7 +27,10 @@ const mapDispatchToProps = (dispatch) => {
     onAddLink: (e) => dispatch(addLink(e.target.value, e.target.name)),
     ontoggleLogo: (e) => dispatch(toggleLogo(e.target.checked)),
     ontoggleHeaderImage: (e) => dispatch(toggleHeaderImage(e.target.checked)),
-    ontoggleCopyright: (e) => dispatch(toggleCopyright(e.target.checked))
+    ontoggleCopyright: (e) => dispatch(toggleCopyright(e.target.checked)),
+    onAddCopyright: (e) => dispatch(addCopyright(e.target.value)),
+    onAlignment: (e) => dispatch(alignFooter(e.target.value, e.target.name)),
+    ontoggleSocial: (e) => dispatch(addSocial(e.target.checked, e.target.name))
   }
 }
 
@@ -37,6 +49,9 @@ class ControlPanel extends Component {
         <FooterControls 
           {...this.props.footerConfig}
           ontoggleCopyright={this.props.ontoggleCopyright}
+          onAddCopyright={this.props.onAddCopyright}
+          onAlignment={this.props.onAlignment}
+          ontoggleSocial={this.props.ontoggleSocial}
         />
       </div>
     )

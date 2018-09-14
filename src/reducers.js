@@ -1,4 +1,12 @@
-import { CHANGE_ALIGNMENT, ADD_LINK, TOGGLE_LOGO, TOGGLE_HEADER_IMAGE, TOGGLE_COPYRIGHT } from "./constants";
+import { 
+    CHANGE_ALIGNMENT, 
+    ADD_LINK, TOGGLE_LOGO, 
+    TOGGLE_HEADER_IMAGE,
+    TOGGLE_COPYRIGHT, 
+    ADD_COPYRIGHT,
+    ALIGNMENT,
+    ADD_SOCIAL
+} from "./constants";
 
 const headerState = {
     alignment: 'right',
@@ -21,24 +29,31 @@ export const headerConfig = (state=headerState, action={}) => {
             return { 
                 ...state,
                 [action.name]: action.payload
-        }
+            }
         case TOGGLE_LOGO:
             return { 
                 ...state,
                 includeLogo: action.payload
-        }
+            }
         case TOGGLE_HEADER_IMAGE:
             return { 
                 ...state,
                 includeHeaderImage: action.payload
-        }
+            }
         default:
             return state;
     }
 }
 
 const footerState = {
-    addCopyright: false,
+    includeCopyright: false,
+    copyrightText: 'Copyright',
+    copyrightAlignment: 'center',
+    socialAlignment: 'center',
+    addTwitter: false,
+    addFacebook: false,
+    addGithub: false,
+    addEmail: false
 }
 
 export const footerConfig = (state=footerState, action={}) => {
@@ -46,7 +61,22 @@ export const footerConfig = (state=footerState, action={}) => {
         case TOGGLE_COPYRIGHT:
             return { 
                 ...state,
-                addCopyright: action.payload
+                includeCopyright: action.payload
+            }
+        case ADD_COPYRIGHT:
+            return { 
+                ...state,
+                copyrightText: action.payload
+            }
+        case ALIGNMENT:
+            return { 
+                ...state,
+                [action.name]: action.payload
+            }
+        case ADD_SOCIAL:
+            return { 
+                ...state,
+                [action.name]: action.payload
             }
         default:
             return state;

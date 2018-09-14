@@ -4,13 +4,13 @@ class TinyHeader extends Component {
     render() {
         const { alignment, link1, link2, link3, link4, includeLogo, includeHeaderImage } = this.props;
 
-        let align;
+        let classAlign;
         if(alignment === 'right') {
-            align = 'align-right';
+            classAlign = 'align-right';
         } else if(alignment === 'left') {
-            align = 'align-left';
+            classAlign = 'align-left';
         } else {
-            align = 'align-center';
+            classAlign = 'align-center';
         }
         
         let logo;
@@ -28,7 +28,7 @@ class TinyHeader extends Component {
         return(
             <div className="">
                 {logo}
-                <div className={align}>{links}</div>
+                <div className={classAlign}>{links}</div>
                 {headerImage}
             </div>
         )
