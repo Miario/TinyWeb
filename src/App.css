@@ -7,12 +7,12 @@ nav {
 }
 
 main {
-  background: lightblue;
-  height: 100px;
+
 }
 
 footer {
   background: lightblue;
+  height: 100px;
 }
 
 .container {
@@ -37,7 +37,12 @@ footer {
 
 .row {
   background: #fff3e2;
-  height: 200px;;
+  height: 100px;;
+}
+
+.col {
+  background: pink;
+  width: 50px;
 }
 
 .align-right {

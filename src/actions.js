@@ -3,6 +3,7 @@ import {
     ADD_LINK, TOGGLE_LOGO, 
     TOGGLE_HEADER_IMAGE,
     ADD_ROWS,
+    ADD_COLUMNS,
     TOGGLE_COPYRIGHT,
     ADD_COPYRIGHT,
     ALIGNMENT,
@@ -32,6 +33,11 @@ export const toggleHeaderImage = (boolean) => ({
 
 export const addRows = (number) => ({
     type: ADD_ROWS,
+    payload: number
+})
+
+export const addColumns = (number) => ({
+    type: ADD_COLUMNS,
     payload: number
 })
 

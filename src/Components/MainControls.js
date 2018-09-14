@@ -13,13 +13,30 @@ class MainControls extends Component {
   }
 
   render() {
-    const { numberOfRows, onHandleRows } = this.props;
+    const { numberOfRows, numberOfColumns, onHandleRows, onHandleColumns } = this.props;
+
+    let rowSettings = [];
+    for(let i = 1; i <= numberOfRows; i++) {
+      rowSettings.push(
+        <div key={i}>
+          <div>Row {i} Settings:</div>
+          <div># of Columns:</div>
+          <select name="columns" value={numberOfColumns} onChange={onHandleColumns}>
+            <option value="1">1 Column</option>
+            <option value="2">2 Columns</option>
+            <option value="3">3 Columns</option>
+            <option value="4">4 Columns</option>
+          </select>
+        </div>
+      );
+    }
 
     return(
       <div>
         <h2>Main Body:</h2>
         <h3>Rows</h3>
-        <div> Select # of Rows <br/>
+        <div> Select # of Rows </div>
+        <div>
           <select name="rows" value={numberOfRows} onChange={onHandleRows}>
             <option value="1">1 Row</option>
             <option value="2">2 Rows</option>
@@ -27,16 +44,10 @@ class MainControls extends Component {
             <option value="4">4 Rows</option>
             <option value="5">5 Rows</option>
           </select>
+          <br />
+          <br />
         </div>
-        <div> Row Settings <br/>
-          <select name="rows" value={numberOfRows} onChange={onHandleRows}>
-            <option value="1">1 Row</option>
-            <option value="2">2 Rows</option>
-            <option value="3">3 Rows</option>
-            <option value="4">4 Rows</option>
-            <option value="5">5 Rows</option>
-          </select>
-        </div>
+        {rowSettings}
       </div>
     )
   }

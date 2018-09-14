@@ -9,6 +9,7 @@ import {
   toggleLogo, 
   toggleHeaderImage,
   addRows,
+  addColumns,
   toggleCopyright,
   addCopyright,
   alignFooter,
@@ -33,7 +34,8 @@ const mapDispatchToProps = (dispatch) => {
     onAddCopyright: (e) => dispatch(addCopyright(e.target.value)),
     onAlignment: (e) => dispatch(alignFooter(e.target.value, e.target.name)),
     ontoggleSocial: (e) => dispatch(addSocial(e.target.checked, e.target.name)),
-    onHandleRows: (e) => dispatch(addRows(e.target.value))
+    onHandleRows: (e) => dispatch(addRows(e.target.value)),
+    onHandleColumns: (e) => dispatch(addColumns(e.target.value))
   }
 }
 
@@ -51,6 +53,7 @@ class ControlPanel extends Component {
         <MainControls
           {...this.props.mainConfig}
           onHandleRows={this.props.onHandleRows}
+          onHandleColumns={this.props.onHandleColumns}
          />
         <FooterControls 
           {...this.props.footerConfig}

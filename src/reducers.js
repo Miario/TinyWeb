@@ -3,6 +3,7 @@ import {
     ADD_LINK, TOGGLE_LOGO, 
     TOGGLE_HEADER_IMAGE,
     ADD_ROWS,
+    ADD_COLUMNS,
     TOGGLE_COPYRIGHT, 
     ADD_COPYRIGHT,
     ALIGNMENT,
@@ -48,6 +49,7 @@ export const headerConfig = (state=headerState, action={}) => {
 
 const mainState = {
     numberOfRows: '1',
+    numberOfColumns: '1'
 }
 
 export const mainConfig = (state=mainState, action={}) => {
@@ -56,6 +58,11 @@ export const mainConfig = (state=mainState, action={}) => {
             return { 
                 ...state,
                 numberOfRows: action.payload
+            }
+        case ADD_COLUMNS:
+            return { 
+                ...state,
+                numberOfColumns: action.payload
             }
         default:
             return state;

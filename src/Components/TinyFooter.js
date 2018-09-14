@@ -24,7 +24,7 @@ class TinyFooter extends Component {
 
         let copyrightFooter;
         if(includeCopyright) {
-            copyrightFooter = <div className="copyright"> &copy; {copyrightText} </div>
+            copyrightFooter = <div className="copyright">{copyrightText}</div>
         }
 
         let twitter;

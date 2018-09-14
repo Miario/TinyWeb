@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 
 class TinyMain extends Component {
     render() {
-        const { numberOfRows } = this.props;
+        const { numberOfRows, numberOfColumns } = this.props;
 
         let showRows = [];
         for(let i = 1; i <= numberOfRows; i++) {
-          showRows.push(<div className="row" key={i}></div>);
+            let showColumns = [];
+            for(let j = 1; j <= numberOfColumns; j++) {
+                showColumns.push(<div className="col" key={j}>Column {j}</div>);
+            }
+            showRows.push(<div className="row" key={i}>Row {i} {showColumns}</div>);
         }
 
         return(
