@@ -26,11 +26,13 @@ class TinyHeader extends Component {
         }
 
         return(
-            <div className="">
-                {logo}
-                <div className={classAlign}>{links}</div>
+            <header className="">
+                <nav> 
+                    {logo}
+                    <div className={classAlign}>{links}</div>
+                </nav>
                 {headerImage}
-            </div>
+            </header>
         )
     }
 }

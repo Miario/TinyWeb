@@ -1,11 +1,25 @@
+nav {
+  background: lightblue;
+}
+
+main {
+  background: lightblue;
+  height: 100px;
+}
+
+footer {
+  background: lightblue;
+  height: 90px;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.mini-web-wrapper {
-  background: lightblue;
+.tiny-web-wrapper {
   width: 700px;
+  margin: 0 auto;
 }
 
 .mod-wrapper {

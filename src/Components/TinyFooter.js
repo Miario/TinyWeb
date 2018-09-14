@@ -54,7 +54,7 @@ class TinyFooter extends Component {
         }
 
         return(
-            <div className="">
+            <footer className="">
                 <div className={copyrightAlign}>{copyrightFooter}</div>
                 <div className={socialAlign}>
                     {twitter}
@@ -62,7 +62,7 @@ class TinyFooter extends Component {
                     {github}
                     {email}
                 </div>
-            </div>
+            </footer>
         )
     }
 }
