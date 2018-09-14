@@ -6,11 +6,11 @@ import { createLogger } from 'redux-logger';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import {  headerConfig, footerConfig } from './reducers';
+import {  headerConfig, mainConfig, footerConfig } from './reducers';
 
 const logger = createLogger();
 
-const rootReducer= combineReducers({ headerConfig, footerConfig });
+const rootReducer= combineReducers({ headerConfig, mainConfig, footerConfig });
 const store = createStore(rootReducer, applyMiddleware(logger));
 
 ReactDOM.render(

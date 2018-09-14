@@ -7,6 +7,7 @@ import TinyFooter from '../Components/TinyFooter';
 const mapStateToProps = state => {
   return {
     headerConfig: state.headerConfig,
+    mainConfig: state.mainConfig,
     footerConfig: state.footerConfig
   }
 }
@@ -16,7 +17,7 @@ class TinyWeb extends Component {
     return(
       <div className="tiny-web-wrapper">
         <TinyHeader {...this.props.headerConfig}/>
-        <TinyMain />
+        <TinyMain {...this.props.mainConfig}/>
         <TinyFooter {...this.props.footerConfig}/>
       </div>
     )

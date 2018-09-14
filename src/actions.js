@@ -2,6 +2,7 @@ import {
     CHANGE_ALIGNMENT, 
     ADD_LINK, TOGGLE_LOGO, 
     TOGGLE_HEADER_IMAGE,
+    ADD_ROWS,
     TOGGLE_COPYRIGHT,
     ADD_COPYRIGHT,
     ALIGNMENT,
@@ -27,6 +28,11 @@ export const toggleLogo = (boolean) => ({
 export const toggleHeaderImage = (boolean) => ({
     type: TOGGLE_HEADER_IMAGE,
     payload: boolean
+})
+
+export const addRows = (number) => ({
+    type: ADD_ROWS,
+    payload: number
 })
 
 export const toggleCopyright = (boolean) => ({

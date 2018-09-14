@@ -2,6 +2,7 @@ import {
     CHANGE_ALIGNMENT, 
     ADD_LINK, TOGGLE_LOGO, 
     TOGGLE_HEADER_IMAGE,
+    ADD_ROWS,
     TOGGLE_COPYRIGHT, 
     ADD_COPYRIGHT,
     ALIGNMENT,
@@ -39,6 +40,22 @@ export const headerConfig = (state=headerState, action={}) => {
             return { 
                 ...state,
                 includeHeaderImage: action.payload
+            }
+        default:
+            return state;
+    }
+}
+
+const mainState = {
+    numberOfRows: '1',
+}
+
+export const mainConfig = (state=mainState, action={}) => {
+    switch(action.type) {
+        case ADD_ROWS:
+            return { 
+                ...state,
+                numberOfRows: action.payload
             }
         default:
             return state;

@@ -8,16 +8,18 @@ import {
   addLink, 
   toggleLogo, 
   toggleHeaderImage,
+  addRows,
   toggleCopyright,
   addCopyright,
   alignFooter,
-  addSocial
+  addSocial,
 } from '../actions';
 
 const mapStateToProps = state => {
   return {
     headerConfig: state.headerConfig,
-    footerConfig: state.footerConfig
+    footerConfig: state.footerConfig,
+    mainConfig: state.mainConfig
   }
 }
 
@@ -30,14 +32,15 @@ const mapDispatchToProps = (dispatch) => {
     ontoggleCopyright: (e) => dispatch(toggleCopyright(e.target.checked)),
     onAddCopyright: (e) => dispatch(addCopyright(e.target.value)),
     onAlignment: (e) => dispatch(alignFooter(e.target.value, e.target.name)),
-    ontoggleSocial: (e) => dispatch(addSocial(e.target.checked, e.target.name))
+    ontoggleSocial: (e) => dispatch(addSocial(e.target.checked, e.target.name)),
+    onHandleRows: (e) => dispatch(addRows(e.target.value))
   }
 }
 
 class ControlPanel extends Component {
   render() {
     return(
-      <div className="mod-wrapper">
+      <div className="config-wrapper">
         <HeaderControls  
           {...this.props.headerConfig} 
           onHandleAlign={this.props.onHandleAlign} 
@@ -45,7 +48,10 @@ class ControlPanel extends Component {
           ontoggleLogo={this.props.ontoggleLogo}
           ontoggleHeaderImage={this.props.ontoggleHeaderImage}
         />
-        <MainControls />
+        <MainControls
+          {...this.props.mainConfig}
+          onHandleRows={this.props.onHandleRows}
+         />
         <FooterControls 
           {...this.props.footerConfig}
           ontoggleCopyright={this.props.ontoggleCopyright}
