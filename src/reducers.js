@@ -50,47 +50,62 @@ export const headerConfig = (state=headerState, action={}) => {
 const mainState = {
     numberOfRows: '1',
     rows: [
-        { rowID: '100',
-            columns: [
+        { 
+            rowID: '100',
+            columns: 
+            [
                 { columnID: '101', value: 'data'},
                 { columnID: '102', value: 'data'},
                 { columnID: '103', value: 'data'},
                 { columnID: '104', value: 'data'}
             ]
         },
-        { rowID: '200', 
-            columns: [
+        { 
+            rowID: '200',
+            columns: 
+            [
                 { columnID: '201', value: 'data'},
                 { columnID: '202', value: 'data'},
                 { columnID: '203', value: 'data'},
                 { columnID: '204', value: 'data'}
             ]
         },
-        { rowID: '300', 
-        columns: [
-            { columnID: '301', value: 'data'},
-            { columnID: '302', value: 'data'},
-            { columnID: '303', value: 'data'},
-            { columnID: '304', value: 'data'}
-        ]
+        { 
+            rowID: '300',
+            columns: 
+            [
+                { columnID: '301', value: 'data'},
+                { columnID: '302', value: 'data'},
+                { columnID: '303', value: 'data'},
+                { columnID: '304', value: 'data'}
+            ]
         },
-        { rowID: '400', 
-        columns: [
-            { columnID: '401', value: 'data'},
-            { columnID: '402', value: 'data'},
-            { columnID: '403', value: 'data'},
-            { columnID: '404', value: 'data'}
-        ]
+        { 
+            rowID: '400',
+            columns: 
+            [
+                { columnID: '401', value: 'data'},
+                { columnID: '402', value: 'data'},
+                { columnID: '403', value: 'data'},
+                { columnID: '404', value: 'data'}
+            ]
         },
-        { rowID: '500', 
-        columns: [
-            { columnID: '501', value: 'data'},
-            { columnID: '502', value: 'data'},
-            { columnID: '503', value: 'data'},
-            { columnID: '504', value: 'data'}
-        ]
+        { 
+            rowID: '500',
+            columns: 
+            [
+                { columnID: '501', value: 'data'},
+                { columnID: '502', value: 'data'},
+                { columnID: '503', value: 'data'},
+                { columnID: '504', value: 'data'}
+            ]
         }
     ],
+    numberOfColumns1: '1',
+    numberOfColumns2: '1',
+    numberOfColumns3: '1',
+    numberOfColumns4: '1',
+    numberOfColumns5: '1'
 }
 
 export const mainConfig = (state=mainState, action={}) => {
@@ -101,21 +116,10 @@ export const mainConfig = (state=mainState, action={}) => {
                 numberOfRows: action.payload,
             }
         case ADD_COLUMNS:
-            // mainState.numberOfColumns= {[action.name]: action.payload}
-            // return { 
-            //     ...state,
-            //     numberOfColumns: {
-            //         [action.name]: {
-            //             id: action.id,  
-            //             number: action.payload 
-            //         }
-            //     }
-            // }
-            return Object.assign({}, state, {
-                columns: [
-                    { columnID: action.id, number: action.payload},
-                ]
-            })
+        return { 
+            ...state,
+            [action.name]: action.payload,
+        }
         default:
             return state;
     }
