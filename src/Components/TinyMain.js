@@ -2,21 +2,34 @@ import React, { Component } from 'react';
 
 class TinyMain extends Component {
     render() {
-        const { numberOfRows, numberOfColumns } = this.props;
+        const {numberOfRows, rows} = this.props;
 
         let showRows = [];
-        for(let i = 1; i <= numberOfRows; i++) {
-            let showColumns = [];
-            for(let j = 1; j <= numberOfColumns; j++) {
-                showColumns.push(<div className="col" key={j}>Column {j}</div>);
+        rows.map(row => {
+            let columns = [];
+            row.columns.map(column => columns.push(<div key={column.columnID} className="col">Col {column.columnID}</div>));
+            if(row.rowID === '100') {
+                showRows.push(<div className="row" key={row.rowID}>Row 1 {row.rowID} {columns}</div>)
             }
-            showRows.push(<div className="row" key={i}>Row {i} {showColumns}</div>);
-        }
-
+            else if(numberOfRows >= '2' && row.rowID === '200') {
+                showRows.push(<div className="row" key={row.rowID}>Row 2 {row.rowID} {columns}</div>)
+            }
+            else if(numberOfRows >= '3' && row.rowID === '300') {
+                showRows.push(<div className="row" key={row.rowID}>Row 3 {row.rowID} {columns}</div>)
+            }
+            else if(numberOfRows >= '4' && row.rowID === '400') {
+                showRows.push(<div className="row" key={row.rowID}>Row 4 {row.rowID} {columns}</div>)
+            }
+            else if(numberOfRows === '5' && row.rowID === '500') {
+                showRows.push(<div className="row" key={row.rowID}>Row 5 {row.rowID} {columns}</div>)
+            }
+            return showRows;
+        })
+        
         return(
-            <main className="">
+            <div className="">
                 {showRows}
-            </main>
+            </div>
         )
     }
 }

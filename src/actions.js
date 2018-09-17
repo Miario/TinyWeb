@@ -31,14 +31,17 @@ export const toggleHeaderImage = (boolean) => ({
     payload: boolean
 })
 
-export const addRows = (number) => ({
+export const addRows = (number, id) => ({
     type: ADD_ROWS,
-    payload: number
+    payload: number,
+    id: id
 })
 
-export const addColumns = (number) => ({
+export const addColumns = (number, id, name) => ({
     type: ADD_COLUMNS,
-    payload: number
+    payload: number,
+    id: id,
+    name: name
 })
 
 export const toggleCopyright = (boolean) => ({

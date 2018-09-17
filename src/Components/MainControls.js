@@ -13,15 +13,15 @@ class MainControls extends Component {
   }
 
   render() {
-    const { numberOfRows, numberOfColumns, onHandleRows, onHandleColumns } = this.props;
-
+    const { numberOfRows, rows, numberOfColumns, onHandleRows, onHandleColumns } = this.props;
+    
     let rowSettings = [];
     for(let i = 1; i <= numberOfRows; i++) {
       rowSettings.push(
         <div key={i}>
           <div>Row {i} Settings:</div>
           <div># of Columns:</div>
-          <select name="columns" value={numberOfColumns} onChange={onHandleColumns}>
+          <select id={100 + i}  onChange={onHandleColumns}>
             <option value="1">1 Column</option>
             <option value="2">2 Columns</option>
             <option value="3">3 Columns</option>

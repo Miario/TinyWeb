@@ -37,12 +37,13 @@ footer {
 
 .row {
   background: #fff3e2;
-  height: 100px;;
+  height: 100px;
+  width: 100%;
 }
 
 .col {
   background: pink;
-  width: 50px;
+  width: 70px;
 }
 
 .align-right {

@@ -34,8 +34,8 @@ const mapDispatchToProps = (dispatch) => {
     onAddCopyright: (e) => dispatch(addCopyright(e.target.value)),
     onAlignment: (e) => dispatch(alignFooter(e.target.value, e.target.name)),
     ontoggleSocial: (e) => dispatch(addSocial(e.target.checked, e.target.name)),
-    onHandleRows: (e) => dispatch(addRows(e.target.value)),
-    onHandleColumns: (e) => dispatch(addColumns(e.target.value))
+    onHandleRows: (e) => dispatch(addRows(e.target.value, e.target.id)),
+    onHandleColumns: (e) => dispatch(addColumns(e.target.value, e.target.id, e.target.name))
   }
 }
 
