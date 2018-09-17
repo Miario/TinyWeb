@@ -32,7 +32,7 @@ class TinyMain extends Component {
                     }
                     return columns;
                 })  
-                showRows.push(<div className="row" key={row.rowID}>Row 1 {row.rowID} {columns}</div>)
+                showRows.push(<div className="row flex-row" key={row.rowID}>{columns}</div>)
             }
             else if(numberOfRows >= '2' && row.rowID === '200') {
                 row.columns.map((column, i)=> {
@@ -50,7 +50,7 @@ class TinyMain extends Component {
                     }
                     return columns;
                 })  
-                showRows.push(<div className="row" key={row.rowID}>Row 1 {row.rowID} {columns}</div>)
+                showRows.push(<div className="row flex-row" key={row.rowID}>{columns}</div>)
             }
             else if(numberOfRows >= '3' && row.rowID === '300') {
                 row.columns.map((column, i)=> {
@@ -68,7 +68,7 @@ class TinyMain extends Component {
                     }
                     return columns;
                 })  
-                showRows.push(<div className="row" key={row.rowID}>Row 1 {row.rowID} {columns}</div>)
+                showRows.push(<div className="row flex-row" key={row.rowID}>{columns}</div>)
             }
             else if(numberOfRows >= '4' && row.rowID === '400') {
                 row.columns.map((column, i)=> {
@@ -86,7 +86,7 @@ class TinyMain extends Component {
                     }
                     return columns;
                 })  
-                showRows.push(<div className="row" key={row.rowID}>Row 1 {row.rowID} {columns}</div>)
+                showRows.push(<div className="row flex-row" key={row.rowID}>{columns}</div>)
             }
             else if(numberOfRows === '5' && row.rowID === '500') {
                 row.columns.map((column, i)=> {
@@ -104,7 +104,7 @@ class TinyMain extends Component {
                     }
                     return columns;
                 })  
-                showRows.push(<div className="row" key={row.rowID}>Row 1 {row.rowID} {columns}</div>)
+                showRows.push(<div className="row flex-row" key={row.rowID}>{columns}</div>)
             }
             return showRows;
         });

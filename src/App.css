@@ -43,7 +43,7 @@ footer {
 
 .col {
   background: pink;
-  width: 70px;
+  width: 100%;
 }
 
 .align-right {
