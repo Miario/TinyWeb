@@ -56,7 +56,7 @@ class TinyFooter extends Component {
         return(
             <footer className="">
                 <div className={copyrightAlign}>{copyrightFooter}</div>
-                <div className={socialAlign}>
+                <div className={`${socialAlign}`}>
                     {twitter}
                     {facebook}
                     {github}

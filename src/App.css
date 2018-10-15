@@ -31,7 +31,6 @@ footer {
 
 .flex-row {
   display: flex;
-  justify-content: center;
   flex-direction: row;
 }
 
